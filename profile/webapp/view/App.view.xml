@@ -1,0 +1,33 @@
+<mvc:View controllerName="profile.controller.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <App id="app">
+        <Page title="{i18n>title}"
+          class="sapUiResponsiveContentPadding" >
+            <Avatar src="images/FLM.jpg"/>
+        <Table items="{oModel>/}">
+                <columns>
+                    <Column width="10em">
+                        <!-- <Text text=""/> -->
+                    </Column>
+                    <Column>
+                        <!-- <Text text=""/> -->
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Label text="{oModel>label}" design="Bold"/>
+                            <Text text="{oModel>value}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+            <HBox>
+            <Button text="{i18n>btnPersonalTexto}" press=".goToPersonal" />
+            <Button text="{i18n>btnLaboralTexto}" press=".goToLaboral"/>
+            </HBox>
+        </Page>
+    </App>
+    <!--add titles, images, tiles or special buttons, beautify-->
+</mvc:View>

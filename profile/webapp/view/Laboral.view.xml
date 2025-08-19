@@ -1,0 +1,28 @@
+<mvc:View controllerName="profile.controller.Laboral"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <!--To do: enable back button. beautify-->
+    <App id="Laboral">
+        <Page title="{i18n>labTitle}" 
+          class="sapUiResponsiveContentPadding"
+          showNavButton="false"
+          navButtonPress="onNavBack"
+            >
+            <VBox id="VBox">
+                <HBox>
+                    <Label text="{i18n>companyLabel}" class="sapUiTinyMarginEnd sapUiSmallMarginBottom"/>
+                    <Text id="companyText"/>
+                </HBox>
+                <HBox>
+                    <Label text="{i18n>jobTitleLabel}" class="sapUiTinyMarginEnd sapUiSmallMarginBottom"/>
+                    <Text text="{i18n>jobTitle}" class="sapUiSmallMarginBottom"/>
+                </HBox>
+                <HBox>
+                    <Label text="{i18n>tasksLabel}" class="sapUiTinyMarginEnd sapUiSmallMarginBottom"/>
+                    <Text text="{i18n>tasks}" class="sapUiSmallMarginBottom"/>
+                </HBox>
+            </VBox>
+        </Page>
+    </App>
+    <!--enable back button. beautify-->
+</mvc:View>

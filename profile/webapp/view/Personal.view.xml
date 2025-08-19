@@ -1,0 +1,23 @@
+<mvc:View controllerName="profile.controller.Personal"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <!--To do: enable back button. beautify-->
+    <App id="Personal">
+        <Page title="{i18n>perTitle}"
+          class="sapUiResponsiveContentPadding"
+          showNavButton="false"
+          navButtonPress="onNavBack"
+            >
+            <VBox>
+                <HBox>
+                    <Label text="{i18n>locationLabel}" class="sapUiTinyMarginEnd sapUiSmallMarginBottom"/>
+                    <Text text="{i18n>location}" class="sapUiSmallMarginBottom"/>
+                </HBox>
+                <HBox>
+                    <Label text="{i18n>activitiesLabel}" class="sapUiTinyMarginEnd sapUiSmallMarginBottom"/>
+                    <Text text="{i18n>activities}" class="sapUiSmallMarginBottom"/>
+                </HBox>
+            </VBox>
+        </Page>
+    </App>
+</mvc:View>
