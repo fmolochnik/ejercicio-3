@@ -6,20 +6,59 @@ sap.ui.define([
 
     return Controller.extend("profile.controller.App", {
         onInit() {
-            let oModel = [];
+            
+            this._setupTableModel();
+            this._setupFormModel();
+
+        },
+        _setupTableModel: function () {
+
+            let oTableModel = [];
 
             const refactor = (label, value) => {
                 return { label, value };
             };
 
-            oModel.push(refactor(this._getResourceBundle("firstNameLabel"),"Fernando"));
-            oModel.push(refactor(this._getResourceBundle("lastNameLabel"),"López Molochnik"));
-            oModel.push(refactor(this._getResourceBundle("eMail"),"fernandolopezmolochnik@gmail.com"));
-            oModel.push(refactor(this._getResourceBundle("gitHub"),"fmolochnik"));
-
-            console.log(oModel);
+            oTableModel.push(refactor(this._getResourceBundle("firstNameLabel"),"Fernando"));
+            oTableModel.push(refactor(this._getResourceBundle("lastNameLabel"),"López Molochnik"));
+            oTableModel.push(refactor(this._getResourceBundle("eMailLabel"),"fernandolopezmolochnik@gmail.com"));
+            oTableModel.push(refactor(this._getResourceBundle("gitHubLabel"),"fmolochnik"));
             
-            this.getView().setModel(new JSONModel(oModel), "oModel");
+            console.log(oTableModel);
+
+            let oJM = new JSONModel(oTableModel);
+
+            console.log(oJM);
+
+            this.getView().setModel(new JSONModel(oTableModel), "oTableModel");
+
+        },
+        _setupFormModel: function () {
+
+            let oFormModel = "";
+
+            console.log("oFormModel 1");
+            console.log(oFormModel);
+            const refactor2 = (firstName, lastName, eMail, gitHub) => {
+                return { firstName, lastName, eMail, gitHub };
+            };
+
+            oFormModel = refactor2(
+                "Fernando",
+                "López Molochnik",
+                "fernandolopezmolochnik@gmail.com",
+                "fmolochnik");
+
+            console.log("oFormModel 2");
+            console.log(oFormModel);
+
+            let oJM = new JSONModel(oFormModel);
+
+            console.log(oJM);
+
+            this.getView().setModel(new JSONModel(oFormModel), "oFormModel");
+
+
         },
         _getResourceBundle: function (key, p1) {
             return this.getOwnerComponent().getModel("i18n").getResourceBundle().getText(key, [p1 || null]);

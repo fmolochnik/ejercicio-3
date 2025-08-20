@@ -1,33 +1,247 @@
 <mvc:View controllerName="profile.controller.App"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
+    xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout">
     <App id="app">
-        <Page title="{i18n>title}"
+        <Page 
+          title="{i18n>title}"
           class="sapUiResponsiveContentPadding" >
-            <Avatar src="images/FLM.jpg"/>
-        <Table items="{oModel>/}">
-                <columns>
-                    <Column width="10em">
-                        <!-- <Text text=""/> -->
-                    </Column>
-                    <Column>
-                        <!-- <Text text=""/> -->
-                    </Column>
-                </columns>
-                <items>
-                    <ColumnListItem>
-                        <cells>
-                            <Label text="{oModel>label}" design="Bold"/>
-                            <Text text="{oModel>value}"/>
-                        </cells>
-                    </ColumnListItem>
-                </items>
-            </Table>
+
+<!-- Panel -->
+
+            <MessageStrip
+                    text="Panel"
+                    class="sapUiTinyMarginTop sapUiTinyMarginBottom"
+                    type="Information"
+                    showIcon="false" />
+
+            <!-- <Panel width="auto" class="sapUiResponsiveMargin" accessibleRole="Region"> -->
+            <Panel width="auto" accessibleRole="Region">
+                <!-- <headerToolbar>
+                    <OverflowToolbar>
+                        <Title text="Panel with picture"/>
+                    </OverflowToolbar>
+                </headerToolbar> -->
+                <content>
+
+<!-- Avatar -->
+
+                    <MessageStrip
+                            text="Avatar"
+                            class="sapUiTinyMarginTop sapUiTinyMarginBottom"
+                            type="Information"
+                            showIcon="false" />
+
+        <Avatar src="images/FLM.jpg"/>
+
+<!-- Image -->
+
+                    <MessageStrip
+                            text="Image"
+                            class="sapUiTinyMarginTop sapUiTinyMarginBottom"
+                            type="Information"
+                            showIcon="false" />
+
+                    <Image src="images/FLM.jpg" width="10em" />
+
+<!-- Table -->
+
+            <MessageStrip
+                    text="Table"
+                    class="sapUiTinyMarginTop sapUiTinyMarginBottom"
+                    type="Information"
+                    showIcon="false" />
+
+            <Table items="{oTableModel>/}" showSeparators="None">
+                    <columns>
+                        <Column width="10em">
+                            <!-- <Text text=""/> -->
+                        </Column>
+                        <Column>
+                            <!-- <Text text=""/> -->
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Label text="{oTableModel>label}"/>
+                                <Text text="{oTableModel>value}"/>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+
+<!-- VBox + HBox -->
+
+                    <MessageStrip
+                            text="VBox + HBox"
+                            class="sapUiTinyMarginTop sapUiTinyMarginBottom"
+                            type="Information"
+                            showIcon="false" />
+                    <VBox>
+                        <HBox>
+                            <Label text="{i18n>firstNameLabel}" class="sapUiTinyMarginEnd"/>
+                            <Text text="{oFormModel>/firstName}"/>
+                        </HBox>
+                        <HBox>
+                            <Label text="{i18n>lastNameLabel}" class="sapUiTinyMarginEnd"/>
+                            <Text text="{oFormModel>/lastName}"/>
+                        </HBox>
+                        <HBox>
+                            <Label text="{i18n>eMailLabel}" class="sapUiTinyMarginEnd"/>
+                            <Text text="{oFormModel>/eMail}"/>
+                        </HBox>
+                        <HBox>
+                            <Label text="{i18n>gitHubLabel}" class="sapUiTinyMarginEnd"/>
+                            <Text text="{oFormModel>/gitHub}"/>
+                        </HBox>
+                    </VBox>
+
+<!-- VerticalLayout + HorizontalLayout -->
+                    
+                    <MessageStrip
+                            text="VerticalLayout + HorizontalLayout"
+                            class="sapUiTinyMarginTop sapUiTinyMarginBottom"
+                            type="Information"
+                            showIcon="false" />
+                    
+                    <l:VerticalLayout>
+                        <l:HorizontalLayout>
+                            <Label text="{i18n>firstNameLabel}" class="sapUiTinyMarginEnd"/>
+                            <Text text="{oFormModel>/firstName}"/>
+                        </l:HorizontalLayout>
+                        <l:HorizontalLayout>
+                            <Label text="{i18n>lastNameLabel}"  class="sapUiTinyMarginEnd"/>
+                            <Text text="{oFormModel>/lastName}"/>
+                        </l:HorizontalLayout>
+                        <l:HorizontalLayout>
+                            <Label text="{i18n>eMailLabel}"  class="sapUiTinyMarginEnd"/>
+                            <Text text="{oFormModel>/eMail}"/>
+                        </l:HorizontalLayout>
+                        <l:HorizontalLayout>
+                            <Label text="{i18n>gitHubLabel}"  class="sapUiTinyMarginEnd"/>
+                            <Text text="{oFormModel>/gitHub}"/>
+                        </l:HorizontalLayout>
+                    </l:VerticalLayout>
+
+<!-- VBox -->
+
+                    <MessageStrip
+                            text="VBox"
+                            class="sapUiTinyMarginTop sapUiTinyMarginBottom"
+                            type="Information"
+                            showIcon="false" />
+                    <VBox>
+                        <Label text="{i18n>firstNameLabel}" class="sapUiTinyMarginTop"/>
+                        <Text text="{oFormModel>/firstName}"/>
+                        <Label text="{i18n>lastNameLabel}"  class="sapUiTinyMarginTop"/>
+                        <Text text="{oFormModel>/lastName}"/>
+                        <Label text="{i18n>eMailLabel}"  class="sapUiTinyMarginTop"/>
+                        <Text text="{oFormModel>/eMail}"/>
+                        <Label text="{i18n>gitHubLabel}"  class="sapUiTinyMarginTop"/>
+                        <Text text="{oFormModel>/gitHub}"/>
+                    </VBox>
+                </content>
+
+<!-- Form -->
+
+                <MessageStrip
+                        text="Form"
+                        class="sapUiTinyMarginTop sapUiTinyMarginBottom"
+                        type="Information"
+                        showIcon="false" />
+
+                <f:Form id="FormChange354wide"
+                    editable="false">
+                    <f:layout>
+                        <f:ResponsiveGridLayout
+                            labelSpanXL="4"
+                            labelSpanL="3"
+                            labelSpanM="4"
+                            labelSpanS="12"
+                            adjustLabelSpan="false"
+                            emptySpanXL="0"
+                            emptySpanL="4"
+                            emptySpanM="0"
+                            emptySpanS="0"
+                            columnsXL="2"
+                            columnsL="1"
+                            columnsM="1"
+                            singleContainerFullSize="false" />
+                    </f:layout>
+                    <f:formContainers>
+                        <f:FormContainer>
+                            <f:formElements>
+                                <f:FormElement label="{i18n>firstNameLabel}" class="sapUiTinyMarginTop">
+                                    <f:fields>
+                                        <Text text="{oFormModel>/firstName}" />
+                                    </f:fields>
+                                </f:FormElement>
+                                <f:FormElement label="{i18n>lastNameLabel}" class="sapUiTinyMarginTop">
+                                    <f:fields>
+                                        <Text text="{oFormModel>/lastName}" />
+                                    </f:fields>
+                                </f:FormElement>
+                                <f:FormElement label="{i18n>eMailLabel}" class="sapUiTinyMarginTop">
+                                    <f:fields>
+                                        <Text text="{oFormModel>/eMail}" />
+                                    </f:fields>
+                                </f:FormElement>
+                                <f:FormElement label="{i18n>gitHubLabel}" class="sapUiTinyMarginTop">
+                                    <f:fields>
+                                        <Text text="{oFormModel>/gitHub}" />
+                                    </f:fields>
+                                </f:FormElement>
+                            </f:formElements>
+                        </f:FormContainer>
+                    </f:formContainers>
+                </f:Form>
+
+<!-- SimpleForm -->
+
+                <MessageStrip
+                        text="SimpleForm"
+                        class="sapUiTinyMarginTop sapUiTinyMarginBottom"
+                        type="Information"
+                        showIcon="false" />
+
+                <VBox class="sapUiSmallMargin">
+                    <f:SimpleForm id="SimpleFormDisplay354"
+                        editable="false"
+                        layout="ResponsiveGridLayout"
+                        labelSpanXL="4"
+                        labelSpanL="3"
+                        labelSpanM="4"
+                        labelSpanS="12"
+                        adjustLabelSpan="false"
+                        emptySpanXL="0"
+                        emptySpanL="4"
+                        emptySpanM="0"
+                        emptySpanS="0"
+                        columnsXL="2"
+                        columnsL="1"
+                        columnsM="1"
+                        singleContainerFullSize="false" >
+                        <f:content>
+                            <Label text="{i18n>firstNameLabel}" class="sapUiTinyMarginTop"/>
+                            <Text text="{oFormModel>/firstName}" class="sapUiTinyMarginTop"/>
+                            <Label text="{i18n>lastNameLabel}" class="sapUiTinyMarginTop"/>
+                            <Text text="{oFormModel>/lastName}" class="sapUiTinyMarginTop"/>
+                            <Label text="{i18n>eMailLabel}" class="sapUiTinyMarginTop"/>
+                            <Text text="{oFormModel>/eMail}" class="sapUiTinyMarginTop"/>
+                            <Label text="{i18n>gitHubLabel}" class="sapUiTinyMarginTop"/>
+                            <Text text="{oFormModel>/gitHub}" class="sapUiTinyMarginTop"/>
+                        </f:content>
+                    </f:SimpleForm>
+                </VBox>
+
+            </Panel>
+
             <HBox>
             <Button text="{i18n>btnPersonalTexto}" press=".goToPersonal" />
             <Button text="{i18n>btnLaboralTexto}" press=".goToLaboral"/>
             </HBox>
         </Page>
     </App>
-    <!--add titles, images, tiles or special buttons, beautify-->
 </mvc:View>
