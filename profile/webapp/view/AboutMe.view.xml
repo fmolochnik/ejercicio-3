@@ -1,8 +1,8 @@
-<mvc:View controllerName="profile.controller.Personal"
+<mvc:View controllerName="profile.controller.AboutMe"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
     <!--To do: enable back button. beautify-->
-    <App id="Personal">
+    <App id="AboutMe">
         <Page title="{i18n>perTitle}"
           class="sapUiResponsiveContentPadding"
           showNavButton="false"

@@ -15,7 +15,6 @@ sap.ui.define([
                 window.history.go(-1);
             } else {
                 this.getOwnerComponent().getRouter().navTo("RouteApp", {}, true);
-                // this.getRouter().navTo("app", {}, true);
             }
         }
     });

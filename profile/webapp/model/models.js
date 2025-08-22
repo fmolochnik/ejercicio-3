@@ -14,6 +14,21 @@ function (JSONModel, Device) {
             var oModel = new JSONModel(Device);
             oModel.setDefaultBindingMode("OneWay");
             return oModel;
+        },
+        createProfileModel: function () {
+
+            let oProfileModel = {
+                "photoURL": "https://avatars.githubusercontent.com/u/41380386?v=4",
+                "firstName": "Fernando",
+                "lastName": "López Molochnik", 
+                "eMail": "fmolochnik@artech-consulting.com", 
+                "gitHub": "fmolochnik",
+                "gitHubImage": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+                "gitHubURL": "https://github.com/fmolochnik"
+            };
+
+            return new JSONModel(oProfileModel);
+
         }
     };
 

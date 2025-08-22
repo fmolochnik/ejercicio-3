@@ -80,10 +80,10 @@
           ]
         },
         {
-          "name": "RoutePersonal",
-          "pattern": "personal/",
+          "name": "RouteAboutMe",
+          "pattern": "aboutMe/",
           "target": [
-            "TargetPersonal"
+            "TargetAboutMe"
           ]
         },
         {
@@ -99,9 +99,9 @@
           "id": "App",
           "name": "App"
         },
-        "TargetPersonal": {
-          "id": "Personal",
-          "name": "Personal"
+        "TargetAboutMe": {
+          "id": "AboutMe",
+          "name": "AboutMe"
         },
         "TargetLaboral": {
           "id": "Laboral",
@@ -112,6 +112,7 @@
     "rootView": {
       "viewName": "profile.view.App",
       "type": "XML",
+      "id": "AppRoot",
       "async": true
     }
   }

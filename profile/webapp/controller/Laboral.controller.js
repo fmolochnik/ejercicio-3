@@ -11,22 +11,17 @@ sap.ui.define([
             oRouter.getRoute("RouteLaboral").attachPatternMatched(this._onPatternMatch,this);
         },
         _onPatternMatch: function (oEvent) {
-             let companyId = oEvent.getParameter("arguments").company;
-             console.log(companyId);
-            //  let oText = new Text({ id:"companyName", text:companyId });
-            //  this.byId("VBox").addItem(oText);
-            this.byId("companyText").setText(companyId);
+            let sCompany = oEvent.getParameter("arguments").company;
+            this.byId("companyText").setText(sCompany);
         },
         onNavBack: function(oEvent) {
             var oHistory, sPreviousHash;
             oHistory = History.getInstance();
             sPreviousHash = oHistory.getPreviousHash();
-            // console.log(sPreviousHash);
             if (sPreviousHash !== undefined) {
                 window.history.go(-1);
             } else {
                 this.getOwnerComponent().getRouter().navTo("RouteApp", {}, true);
-                // this.getRouter().navTo("app", {}, true);
             }
         }
     });
